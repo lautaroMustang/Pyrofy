@@ -13,7 +13,11 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('clients');
+      $clients=\App\Client::all();
+      $variables=[
+        "clients"=>$clients,
+      ];
+        return view('clients',$clients);
     }
 
     /**
